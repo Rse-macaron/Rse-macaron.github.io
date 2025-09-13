@@ -99,7 +99,7 @@ post_search: true
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: linear-gradient(to bottom,"#4B3223","#F3BF66")
+navbar: linear-gradient(to bottom,#4B3223,#F3BF66)
 navbar-text-col: "#FFFFFF"
 navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
