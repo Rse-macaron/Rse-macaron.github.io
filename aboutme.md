@@ -4,9 +4,12 @@ title: About me
 subtitle:  자기소개 페이지
 ---
 
-자기소개 페이지입니다.
+# 르세의 TRPG 로그 백업용 블로그
 
-역시 마크다운 문법으로 작성합니다.
+### :e-mail: 기본 연락망 
+🐦 twitter : @RSE_TR (티알계) <br>
+🩵 bluesky : @Rse-ute-ruri.bsky.social
 
-문서를 수정하거나 삭제해주세요. 
-
+### :pushpin: NOTICE
+기본적으로 GM을 한 세션의 로그가 올라갑니다. <br>
+TRPG를 짧게 하진 않았으나 마냥 능숙하진 않아서 마스터링 관련 실수가 있을수도 있으나 의도한 바는 아닙니다.
