@@ -146950,11 +146950,39 @@ body.name-below-icon-active .message-container.export.align-right .bubble.export
 </div>
 </div></div><script>
 (function() { "use strict";
-let currentExportTab = 'all'; let currentExportSpeaker = 'all'; let visibleTabsInAllModeExport = new Set();
-const speakerSettings = {"봉마신선":{"displayName":"봉마신선","alignment":"left","color":"#ffffff","customTextColor":null,"forceNarration":false},"린안":{"displayName":"린안","alignment":"left","color":"#CC0000","customTextColor":null,"forceNarration":false},"린자오":{"displayName":"린자오","alignment":"left","color":"#4d4dff","customTextColor":null,"forceNarration":false},"봉마신선2":{"displayName":"봉마신선2","alignment":"left","color":"#222222","customTextColor":null,"forceNarration":false},"나찰":{"displayName":"나찰","alignment":"left","color":"#e91e63","customTextColor":null,"forceNarration":false},"현라":{"displayName":"현라","alignment":"left","color":"#000000","customTextColor":null,"forceNarration":false},"헌":{"displayName":"헌","alignment":"left","color":"#888888","customTextColor":null,"forceNarration":false},"멸":{"displayName":"멸","alignment":"left","color":"#CFDFDC","customTextColor":null,"forceNarration":false},"NPC 청룡":{"displayName":"NPC 청룡","alignment":"left","color":"#87afc6","customTextColor":null,"forceNarration":false},"NPC 노앵설":{"displayName":"NPC 노앵설","alignment":"left","color":"#735953","customTextColor":null,"forceNarration":false},"식인 인어1":{"displayName":"식인 인어1","alignment":"left","color":"#888888","customTextColor":null,"forceNarration":false},"식인 인어2":{"displayName":"식인 인어2","alignment":"left","color":"#888888","customTextColor":null,"forceNarration":false},"NPC 용왕":{"displayName":"NPC 용왕","alignment":"left","color":"#ddb5b7","customTextColor":null,"forceNarration":false},"NPC 사모뿔":{"displayName":"NPC 사모뿔","alignment":"left","color":"#B974B5","customTextColor":null,"forceNarration":false},"봉인된 악신":{"displayName":"봉인된 악신","alignment":"left","color":"#fceb71","customTextColor":null,"forceNarration":false},"NPC 범루":{"displayName":"NPC 범루","alignment":"left","color":"#526088","customTextColor":null,"forceNarration":false},"쇼바등선":{"displayName":"쇼바등선","alignment":"left","color":"#888888","customTextColor":null,"forceNarration":false},"???":{"displayName":"???","alignment":"left","color":"#333333","customTextColor":null,"forceNarration":false},"창린":{"displayName":"창린","alignment":"left","color":"#888888","customTextColor":null,"forceNarration":false},"화란":{"displayName":"화란","alignment":"left","color":"#CC0000","customTextColor":null,"forceNarration":false}}; const exportBaseTextColor = "#000000"; const exportTextEdgeColor = "#ffffff";
-const exportLogTabsNav = document.getElementById('export-log-tabs'); const exportSpeakerFilter = document.getElementById('export-speaker-filter');
-const exportAllModeFilter = document.getElementById('export-all-mode-filter'); const exportLogDisplay = document.getElementById('export-log-display');
-const allLogItems = exportLogDisplay ? Array.from(exportLogDisplay.querySelectorAll('.log-item')) : [];
+    let currentExportTab = 'all'; 
+    let currentExportSpeaker = 'all'; 
+    let visibleTabsInAllModeExport = new Set();
+    const speakerSettings = {
+        "봉마신선": { "displayName": "봉마신선", "alignment": "left", "color": "#ffffff", "customTextColor": null, "forceNarration": false },
+        "린안": { "displayName": "린안", "alignment": "left", "color": "#CC0000", "customTextColor": null, "forceNarration": false }, 
+        "린자오": { "displayName": "린자오", "alignment": "left", "color": "#4d4dff", "customTextColor": null, "forceNarration": false }, 
+        "봉마신선2": { "displayName": "봉마신선2", "alignment": "left", "color": "#222222", "customTextColor": null, "forceNarration": false }, 
+        "나찰": { "displayName": "나찰", "alignment": "left", "color": "#e91e63", "customTextColor": null, "forceNarration": false }, 
+        "현라": { "displayName": "현라", "alignment": "left", "color": "#000000", "customTextColor": null, "forceNarration": false }, 
+        "헌": { "displayName": "헌", "alignment": "left", "color": "#888888", "customTextColor": null, "forceNarration": false }, 
+        "멸": { "displayName": "멸", "alignment": "left", "color": "#CFDFDC", "customTextColor": null, "forceNarration": false }, 
+        "NPC 청룡": { "displayName": "NPC 청룡", "alignment": "left", "color": "#87afc6", "customTextColor": null, "forceNarration": false }, 
+        "NPC 노앵설": { "displayName": "NPC 노앵설", "alignment": "left", "color": "#735953", "customTextColor": null, "forceNarration": false }, 
+        "식인 인어": { "displayName": "식인 인어1", "alignment": "left", "color": "#888888", "customTextColor": null, "forceNarration": false }, 
+        "식인 인어(1)": { "displayName": "식인 인어2", "alignment": "left", "color": "#888888", "customTextColor": null, "forceNarration": false }, 
+        "NPC 용왕": { "displayName": "NPC 용왕", "alignment": "left", "color": "#ddb5b7", "customTextColor": null, "forceNarration": false }, 
+        "NPC 사모뿔": { "displayName": "NPC 사모뿔", "alignment": "left", "color": "#596164", "customTextColor": null, "forceNarration": false }, 
+        "봉인된 악신": { "displayName": "봉인된 악신", "alignment": "left", "color": "#fceb71", "customTextColor": null, "forceNarration": false }, 
+        "NPC 범루": { "displayName": "NPC 범루", "alignment": "left", "color": "#526088", "customTextColor": null, "forceNarration": false }, 
+        "쇼바등선": { "displayName": "쇼바등선", "alignment": "left", "color": "#888888", "customTextColor": null, "forceNarration": false }, 
+        "???": { "displayName": "???", "alignment": "left", "color": "#333333", "customTextColor": null, "forceNarration": false }, 
+        "창린": { "displayName": "창린", "alignment": "left", "color": "#888888", "customTextColor": null, "forceNarration": false }, 
+        "화란": { "displayName": "화란", "alignment": "left", "color": "#CC0000", "customTextColor": null, "forceNarration": false }
+    }; 
+    
+    const exportBaseTextColor = "#000000"; const exportTextEdgeColor = "#ffffff";
+    
+    const exportLogTabsNav = document.getElementById('export-log-tabs'); //id 가져오기
+    const exportSpeakerFilter = document.getElementById('export-speaker-filter'); 
+    //if exportSpeakerFilter():
+    const exportAllModeFilter = document.getElementById('export-all-mode-filter'); const exportLogDisplay = document.getElementById('export-log-display');
+    const allLogItems = exportLogDisplay ? Array.from(exportLogDisplay.querySelectorAll('.log-item')) : [];
 if (!exportLogDisplay) { console.error("Export log display not found."); return; }
 
 document.documentElement.style.setProperty('--text-edge-color', exportTextEdgeColor);
@@ -146978,18 +147006,23 @@ function applyInitialStyles() {
     });
 }
 
-function initializeExportFilters() {
+function initializeExportFilters() {//바로 시작 적용되는 파트
     const uniqueTabs = new Set(['all']); const uniqueSpeakers = new Set(['all']); const speakerCounts = {};
     allLogItems.forEach(item => {
         const tab = item.dataset.tab; const speaker = item.dataset.speaker;
         if (tab && tab !== 'all' && tab !== 'header') uniqueTabs.add(tab);
-        if (speaker && speaker !== 'all' && speaker !== '不明' && speaker !== 'header_img') {
-             uniqueSpeakers.add(speaker); if(item.classList.contains('message-item')) speakerCounts[speaker] = (speakerCounts[speaker] || 0) + 1;
+        if (speaker && speaker !== 'all' && speaker !== '不明' && speaker !== 'header_img') { //캐릭터, 횟수 계산해주는 파트
+            uniqueSpeakers.add(speaker); 
+            if(item.classList.contains('message-item')) 
+            speakerCounts[speaker] = (speakerCounts[speaker] || 0) + 1;
         }
     });
     visibleTabsInAllModeExport = new Set([...uniqueTabs].filter(t => t !== 'all'));
     if(exportLogTabsNav) populateExportTabs(uniqueTabs);
-    if(exportSpeakerFilter) {populateExportSpeakerFilter(uniqueSpeakers, speakerCounts); exportSpeakerFilter.addEventListener('change', handleExportSpeakerChange);}
+    if(exportSpeakerFilter) {
+        populateExportSpeakerFilter(uniqueSpeakers, speakerCounts); //uniqueSpeakers= 말하는 상대, speakerCounts = 횟수
+        exportSpeakerFilter.addEventListener('change', handleExportSpeakerChange);
+    }
     if(exportAllModeFilter) populateExportAllModeFilter(uniqueTabs);
     handleExportTabChange(currentExportTab);
     applyExportFilters();
@@ -147006,7 +147039,7 @@ function populateExportTabs(tabsSet) {
     exportLogTabsNav.appendChild(fragment);
 }
 
-function populateExportAllModeFilter(tabsSet) {
+function populateExportAllModeFilter(tabsSet) { 
     exportAllModeFilter.innerHTML = '';
     const container = document.createElement('div');
     container.className = 'all-mode-checkbox-container';
@@ -147016,7 +147049,9 @@ function populateExportAllModeFilter(tabsSet) {
         const wrapper = document.createElement('div'); wrapper.className = 'checkbox-wrapper';
         const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.id = 'export-check-' + tab; checkbox.value = tab;
         checkbox.checked = visibleTabsInAllModeExport.has(tab);
-        checkbox.addEventListener('change', (e) => { if (e.target.checked) visibleTabsInAllModeExport.add(tab); else visibleTabsInAllModeExport.delete(tab); applyExportFilters(); });
+        checkbox.addEventListener('change', (e) => { 
+            if (e.target.checked) visibleTabsInAllModeExport.add(tab); 
+            else visibleTabsInAllModeExport.delete(tab); applyExportFilters(); });
         const label = document.createElement('label'); label.htmlFor = 'export-check-' + tab; label.textContent = tab;
         wrapper.appendChild(checkbox); wrapper.appendChild(label); container.appendChild(wrapper);
     });
@@ -147029,15 +147064,38 @@ function populateExportAllModeFilter(tabsSet) {
     exportAllModeFilter.appendChild(container);
 }
 
-function populateExportSpeakerFilter(speakersSet, counts) {
-    const sortedSpeakers = [...speakersSet].sort((a, b) => { if (a === 'all') return -1; if (b === 'all') return 1; const countDiff = (counts[b] || 0) - (counts[a] || 0); return countDiff !== 0 ? countDiff : a.localeCompare(b); });
-    const fragment = document.createDocumentFragment(); if (!sortedSpeakers.includes('all')) sortedSpeakers.unshift('all');
+function populateExportSpeakerFilter(speakersSet, counts) { //캐릭터별 선택해서 적용하는 필터하는 파트
+    const sortedSpeakers = [...speakersSet].sort((a, b) => { if (a === 'all') return -1; if (b === 'all') return 1; 
+    const countDiff = (counts[b] || 0) - (counts[a] || 0); return countDiff !== 0 ? countDiff : a.localeCompare(b); });
+    const fragment = document.createDocumentFragment();
+    if (!sortedSpeakers.includes('all')) sortedSpeakers.unshift('all');
     sortedSpeakers.forEach(speaker => {
         const option = document.createElement('option'); option.value = speaker;
-        if (speaker === 'all') { option.textContent = '모든 캐릭터'; } else { const displayName = (speakerSettings[speaker] && speakerSettings[speaker].displayName) ? speakerSettings[speaker].displayName : speaker; const count = counts[speaker] || 0; option.textContent = displayName + ' (' + count + '번)'; }
-        fragment.appendChild(option);
+        if (speaker === 'all') { option.textContent = '모든 캐릭터'; fragment.appendChild(option);} 
+        else if (speaker==='헌'||speaker==='창린'||speaker==='화란'||speaker==='나찰'||speaker==='쇼바등선'){}
+        else { const displayName = (speakerSettings[speaker] && speakerSettings[speaker].displayName) ? speakerSettings[speaker].displayName : speaker; 
+                                    //speaker 세팅이랑 displayName이 일치하면 speakerSettings[speaker].displayName 아니면 speaker 처리
+            const count = counts[speaker] || 0;
+            if(displayName==='멸'){
+                const count = counts['멸'] || 0+ counts['헌']||0;
+            }
+            else if (displayName==='린자오'){
+                const count = counts['린자오'] || 0+ counts['창린']||0+ counts['쇼바등선']||0;
+            }
+            else if (displayName==='린안'){
+                const count = counts['화란'] || 0+ counts['린안']||0;
+            }
+            else if (displayName==='현라'){
+                const count = counts['나찰'] || 0+ counts['현라']||0;
+            }
+
+            option.textContent = displayName + ' (' + count + '번)'; 
+            fragment.appendChild(option);}
     });
-    exportSpeakerFilter.innerHTML = ''; exportSpeakerFilter.appendChild(fragment); exportSpeakerFilter.value = currentExportSpeaker; exportSpeakerFilter.disabled = sortedSpeakers.length <= 1;
+    exportSpeakerFilter.innerHTML = ''; 
+    exportSpeakerFilter.appendChild(fragment); 
+    exportSpeakerFilter.value = currentExportSpeaker; 
+    exportSpeakerFilter.disabled = sortedSpeakers.length <= 1;
 }
 
 function handleExportTabChange(tabName) {
@@ -147047,7 +147105,12 @@ function handleExportTabChange(tabName) {
     applyExportFilters();
 }
 
-function handleExportSpeakerChange() { const newSpeaker = exportSpeakerFilter.value; if (currentExportSpeaker === newSpeaker) return; currentExportSpeaker = newSpeaker; applyExportFilters(); }
+function handleExportSpeakerChange() { 
+    const newSpeaker = exportSpeakerFilter.value; 
+    if (currentExportSpeaker === newSpeaker) return; 
+    console.log(newSpeaker);
+    currentExportSpeaker = newSpeaker; applyExportFilters(); 
+}
 
 function applyExportFilters() {
     let visibleCount = 0;
@@ -147055,7 +147118,21 @@ function applyExportFilters() {
         const itemTab = item.dataset.tab; const itemSpeaker = item.dataset.speaker;
         let isVisible = false;
 
-        const speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker;
+        let speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker;
+
+        if (currentExportSpeaker==='멸'){
+            speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker || itemSpeaker === '헌';
+        }
+        else if (currentExportSpeaker==='현라'){
+            speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker || itemSpeaker === '나찰';
+        }
+        else if (currentExportSpeaker==='린자오'){
+            speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker || itemSpeaker === '쇼바등선'|| itemSpeaker === '창린';
+        }
+        else if (currentExportSpeaker==='린안'){
+            speakerMatch = currentExportSpeaker === 'all' || itemSpeaker === currentExportSpeaker || itemSpeaker === '화란';
+        }
+
 
         let tabMatch = false;
         if (currentExportTab === 'all') {
