@@ -116492,7 +116492,7 @@ function populateExportSpeakerFilter(speakersSet, counts) {
     const fragment = document.createDocumentFragment(); if (!sortedSpeakers.includes('all')) sortedSpeakers.unshift('all');
     sortedSpeakers.forEach(speaker => {
         const option = document.createElement('option'); option.value = speaker;
-        if (speaker === 'all') { option.textContent = 'すべての発言者'; } else { const displayName = (speakerSettings[speaker] && speakerSettings[speaker].displayName) ? speakerSettings[speaker].displayName : speaker; const count = counts[speaker] || 0; option.textContent = displayName + ' (' + count + '回)'; }
+        if (speaker === 'all') { option.textContent = '모든 캐릭터'; } else { const displayName = (speakerSettings[speaker] && speakerSettings[speaker].displayName) ? speakerSettings[speaker].displayName : speaker; const count = counts[speaker] || 0; option.textContent = displayName + ' (' + count + '번)'; }
         fragment.appendChild(option);
     });
     exportSpeakerFilter.innerHTML = ''; exportSpeakerFilter.appendChild(fragment); exportSpeakerFilter.value = currentExportSpeaker; exportSpeakerFilter.disabled = sortedSpeakers.length <= 1;
