@@ -6,4 +6,4 @@ permalink: /2026-05-01-mothintofire/
 tag: 카미가카리
 ---
 
-{% include_relative SXpYbD3DC.html %}
+{% include_relative custom_SXpYbD3DC.html %}
