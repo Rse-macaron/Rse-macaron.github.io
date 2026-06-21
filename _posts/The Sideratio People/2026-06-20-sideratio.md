@@ -1,0 +1,9 @@
+---
+layout: minimal
+title: 시데라티오 사람들
+subtitle: KPC 존 래클랜드(코로세) PC 리처드 래클랜드(르세)
+permalink: /2026-06-20-sideratio/
+tag: coc
+---
+
+{% include_260621_sideratio.html %}
