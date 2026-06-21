@@ -6,4 +6,4 @@ permalink: /2026-06-20-sideratio/
 tag: coc
 ---
 
-{% include_260621_sideratio.html %}
+{% include_relative 260621_sideratio.html %}
