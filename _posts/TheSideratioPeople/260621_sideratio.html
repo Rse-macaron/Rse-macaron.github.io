@@ -2,8 +2,9 @@
 <title></title><link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap');
-    
-      #filter-root { position: relative; z-index: 1000000; font-family: inherit; }
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&amp;display=swap');
+
+    #filter-root { position: relative; z-index: 1000000; font-family: inherit; }
     #filter-root * { box-sizing: border-box; }
       
     #f-btn {position: fixed !important; top: 20px; right: 20px;
@@ -43,16 +44,35 @@
       background-color: transparent !important;
     }
   
-    .log-main-container { background-color: #ffffff; margin: 0; padding: 0; }
+    .log-main-container {margin: 0; padding: 0; }
     .log-container * { box-sizing: border-box; min-width: 0; }
-    .log-container { 
-      width: 100%; max-width: 800px; margin: 0 auto; 
-      font-family: 'Noto Serif KR', serif;
-      background: #ffffff; color: #1a1a1a;
-      padding: 20px 0;
-      font-size: 14px;
-      line-height: 1.6;
-      overflow-x: hidden;
+    .log-container {
+        width: 80%;
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px 25px;
+        font-family: 'Noto Serif KR', serif;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #1a1a1a;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        font-size: 14px;
+        line-height: 1.6;
+        position: relative;
+        border-radius: 8px;
+        overflow-x: hidden;
+    }
+    .log-main-container::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url(https://lh3.googleusercontent.com/proxy/eMvJSkMgJZYUlCfu9DjrCHFFQCFwPL3ytob0Oa0n5CzHkjOhLLfqqkxjL2wvvXgjCIsauAVs3iOGbxb1N2l5YynspuCQ8z_67ESbzNJP);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        filter: blur(4px);
+        opacity: 0.9;
+        transform: scale(1.1);
+        z-index: -1;
     }
     
     .log-item { position: relative; margin-bottom: 2px; }
@@ -88,7 +108,7 @@
     }
     
     .command-box { 
-      background: rgba(0, 0, 0, 0.03); border: 1px solid #e5e5e5; 
+      background: rgba(240, 240, 240, 0.95); border: 1px solid #e5e5e5; 
       border-radius: 8px; margin: 8px 15.6px; 
     }
     .command-text { font-family: 'NanumGothicCodingLigature', monospace; color: #1a1a1a; font-weight: bold; line-height: 1.6; }
@@ -117,6 +137,13 @@
       </div>
     
         <div class="log-container">
+          <audio id="bgm" controls="" loop="" controlslist="nodownload">
+        <source src="https://raw.githubusercontent.com/Rse-macaron/Rse-macaron.github.io/refs/heads/master/_posts/TheSideratioPeople/AVALONIAN.mp3" type="audio/mpeg">
+    </audio>
+    <p>재생시 자동으로 반복재생됩니다.</p>
+    <hr class="tab-separator export" style="border: 0; border-top: 2px dashed #cccccc; display: block;">
+    <h1 style="font-family: 'Fredericka the Great', serif; line-height:1; margin-bottom:5px; text-align: center; color: black; font-size: 3em; font-weight: normal;">The Sideratio People</h1>
+    <h1 style="padding-bottom: 10px; text-align: center; color: black; font-size: 1.7em; border-bottom: 2px solid #cccccc; margin: 0px 0px 25px;">시데타리오 사람들</h1>
 <div data-tab="tab_1" data-is-main-tab="true" class="tab-name-block ccfolia-log-entry">
           <div class="tab-name-badge" style="background: #e91e6310; color: #e91e63; border: 1px solid #e91e6344;">
             메인
@@ -129,7 +156,7 @@
           <div class="tab-name-badge" style="background: #e91e6310; color: #e91e63; border: 1px solid #e91e6344;">
             메인
           </div>
-        </div><div data-tab="tab_1" data-char="char_2" data-is-main-tab="true" data-is-narration-character="false" data-is-command="false" class="log-item ccfolia-log-entry"><div class="main-row" style="padding-top: 12px; padding-bottom: 12px;"><img src="https://nepa510.mycafe24.com/data/file/nepa_upload/3546852055_AhTl9VUn_38713ffa59d7da0903302f2a171cd9cd1dbf7298.png" class="main-avatar" /><div class="main-body"><span class="main-name" style="color: #f44336; display: block;">KP</span><div class="main-content">2026.06.20<br>시데라티오 사람들<br><br>KP 코로세<br>KPC 존 래클랜드<br>PL 르세<br>탐사자 리처드 래클랜드<div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div>●도입<div style="margin-top: 0.8em;"></div>당신은 운전대를 잡고 길고 긴 터널을 통과하고 있습니다.</div></div></div></div><div data-tab="tab_2" data-is-main-tab="false" class="tab-name-block ccfolia-log-entry">
+        </div><div data-tab="tab_1" data-char="char_2" data-is-main-tab="true" data-is-narration-character="false" data-is-command="false" class="log-item ccfolia-log-entry"><div class="main-row" style="padding-top: 12px; padding-bottom: 12px;"><img src="https://nepa510.mycafe24.com/data/file/nepa_upload/3546852055_AhTl9VUn_38713ffa59d7da0903302f2a171cd9cd1dbf7298.png" class="main-avatar" /><div class="main-body"><span class="main-name" style="color: #f44336; display: block;">KP</span><div class="main-content"><img src="https://raw.githubusercontent.com/Rse-macaron/Rse-macaron.github.io/refs/heads/master/_posts/TheSideratioPeople/image/sideratio_log.png" alt="시데라티오 로고" style="width:100%"><br><br>2026.06.20<br>시데라티오 사람들<br><br>KP 코로세<br>KPC 존 래클랜드<br>PL 르세<br>탐사자 리처드 래클랜드<div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div>●도입<div style="margin-top: 0.8em;"></div>당신은 운전대를 잡고 길고 긴 터널을 통과하고 있습니다.</div></div></div></div><div data-tab="tab_2" data-is-main-tab="false" class="tab-name-block ccfolia-log-entry">
           <div class="tab-name-badge" style="background: #88888810; color: #888888; border: 1px solid #88888844;">
             잡담
           </div>
@@ -3045,7 +3072,7 @@
           <div class="tab-name-badge" style="background: #e91e6310; color: #e91e63; border: 1px solid #e91e6344;">
             메인
           </div>
-        </div><div data-tab="tab_1" data-char="char_2" data-is-main-tab="true" data-is-narration-character="false" data-is-command="false" class="log-item ccfolia-log-entry"><div class="main-row" style="padding-top: 12px; padding-bottom: 12px;"><img src="https://nepa510.mycafe24.com/data/file/nepa_upload/3546852055_AhTl9VUn_38713ffa59d7da0903302f2a171cd9cd1dbf7298.png" class="main-avatar" /><div class="main-body"><span class="main-name" style="color: #f44336; display: block;">KP</span><div class="main-content"><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div>ENDING 1 다가오는 아침<div style="margin-top: 0.8em;"></div>수고하셨습니다!!!</div></div></div></div><div data-tab="tab_2" data-is-main-tab="false" class="tab-name-block ccfolia-log-entry">
+        </div><div data-tab="tab_1" data-char="char_2" data-is-main-tab="true" data-is-narration-character="false" data-is-command="false" class="log-item ccfolia-log-entry"><div class="main-row" style="padding-top: 12px; padding-bottom: 12px;"><img src="https://nepa510.mycafe24.com/data/file/nepa_upload/3546852055_AhTl9VUn_38713ffa59d7da0903302f2a171cd9cd1dbf7298.png" class="main-avatar" /><div class="main-body"><span class="main-name" style="color: #f44336; display: block;">KP</span><div class="main-content"><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div><div style="margin-top: 0.8em;"></div>ENDING 1 다가오는 아침<div style="margin-top: 0.8em;"><img src="https://raw.githubusercontent.com/Rse-macaron/Rse-macaron.github.io/7acc68367dbb88acfd3880ec31e90a16c5681187/%EC%8B%9C%EB%8D%B0%EB%9D%BC%ED%8B%B0%EC%98%A4%20%EC%84%B8%EC%B9%B4.png" alt="시데라티오 세카" style="width:100%"></div><div style="margin-top: 0.8em;"></div>수고하셨습니다!!!</div></div></div></div><div data-tab="tab_2" data-is-main-tab="false" class="tab-name-block ccfolia-log-entry">
           <div class="tab-name-badge" style="background: #88888810; color: #888888; border: 1px solid #88888844;">
             잡담
           </div>
