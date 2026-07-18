@@ -6,4 +6,4 @@ permalink: /2026-07-18-adropintheocean/
 tag: 카미가카리
 ---
 
-{% include_relative custom_SXpYbD3DC.html %}
+{% include_relative 창해일속_log.html %}
