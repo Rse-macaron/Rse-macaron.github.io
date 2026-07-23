@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: minimal
 title: 창해일속
 subtitle: GM 르세 PL 이베, 밤뼝, 쿤, 코로세
 permalink: /2026-07-18-adropintheocean/
