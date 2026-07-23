@@ -124,6 +124,10 @@
     .n-r { text-align: center; color: #1a1a1a; line-height: 1.6; font-size: 14px; font-weight: bold; font-style: italic; }
     .n-sr { text-align: center; color: #1a1a1a; line-height: 1.6; font-size: 14px; font-weight: bold; font-style: italic; padding: 2px 12px; margin-bottom: 0px; }
 
+    .log-container :is(p, span, a, b, strong, i, em, h1, h2, h3, h4, h5, h6, [class$="-content"], [class$="-name"], .narration-row, .narration-split-row, .command-text) {
+      background-color: transparent !important;
+    }
+
     .log-main-container {margin: 0; padding: 0; }
     .log-container * { box-sizing: border-box; min-width: 0; }
     .log-container {
@@ -141,6 +145,11 @@
         border-radius: 8px;
         overflow-x: hidden;
     }
+    @media (max-width:768px){
+    .log-container{
+        width:100%;
+    }
+
     .log-main-container::before {
         content: "";
         position: fixed;
